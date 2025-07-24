@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="org.example.cumparaturi.HelloController">
+    <VBox fx:id="mainMenu" alignment="TOP_LEFT" spacing="10.0" visible="true">
+        <padding>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
+        </padding>
+        <Label fx:id="welcomeText" text="Selectează o opțiune:"/>
+        <Button text="Afisare lista produse" onAction="#openafisare"/>
+        <Button text="Filtrare" onAction="#openFiltrare"/>
+        <Button text="Cumparare" onAction="#openCerinta3"/>
+        <Button text="Adaugare" onAction="#openAdd"/>
+        <Button text="Stergere" onAction="#openDelete"/>
+        <Button text="Cautare" onAction="#openFiltrare2"/>
+    </VBox>
+    <VBox fx:id="afisare" alignment="TOP_LEFT" spacing="10.0" visible="false">
+        <padding>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
+        </padding>
+        <Label text="Lista sortata"/>
+        <Button text="Afiseaza rez" onAction="#handleaff"/>
+        <ListView fx:id="OrdonareListView" prefHeight="400.0" prefWidth="300.0"/>
+        <Button text="inapoi" onAction="#goBackMenu"/>
+    </VBox>
+
+    <VBox fx:id="filtrate" alignment="TOP_LEFT" spacing="10.0" visible="false">
+        <padding>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
+        </padding>
+        <Label text="Filtrare"/>
+        <TextField fx:id="minField" promptText="Pret minim"/>
+        <TextField fx:id="maxField" promptText="Pret maxim"/>
+        <Button text="Filtrare" onAction="#handleFiltrare"/>
+        <Button text="Refresh" onAction="#refreshFiltrare"/>
+        <ListView fx:id="FiltrareListView" prefHeight="400.0" prefWidth="300.0"/>
+        <Button text="inapoi" onAction="#goBackMenu"/>
+    </VBox>
+    <VBox fx:id="cerinta3" alignment="TOP_LEFT" spacing="10.0" visible="false">
+        <padding>
+            <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
+        </padding>
+        <Label text="Lista produse disponibile:"/>
+        <ListView fx:id="produseListView" prefHeight="100.0" prefWidth="200.0"/>
+        <Label text="Id: "/>
+        <TextField fx:id="idField" promptText="id"/>
+        <Button text="Cumpara" onAction="#handelCumpara"/>
+        <ListView fx:id="pretfinal" prefHeight="40.0" prefWidth="30.0"/>
+        <Button text="Refresh" onAction="#refreshAff"/>
+        <Button text="inapoi" onAction="#goBackMenu"/>
+    </VBox>
+    <VBox fx:id="adaugare" alignment="TOP_LEFT" spacing="10.0" visible="false">
+    <padding>
+        <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
+    </padding>
+        <Label text="Adaugare"/>
+        <TextField fx:id="marcaField" promptText="Marca"/>
+        <TextField fx:id="numeField" promptText="Nume"/>
+        <TextField fx:id="pretField" promptText="Pret"/>
+        <TextField fx:id="cantitateField" promptText="Cantitate"/>
+        <Button text="Adaugare produs" onAction="#handleAdaugare"/>
+        <Label fx:id="mesaj" text="" style="-fx-text-fill: green;"/>
+        <Button text="Refresh" onAction="#handleRefresh"/>
+        <Button text="inapoi" onAction="#goBackMenu"/>
+    </VBox>
+    <VBox fx:id="delete" alignment="TOP_LEFT" spacing="10.0" visible="false">
+    <padding>
+        <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
+    </padding>
+        <Label text="Stergere"/>
+        <TextField fx:id="idDeleteField" promptText="Id"/>
+        <Button text="Stergere produs" onAction="#handlestegere"/>
+        <Label fx:id="mesajDelete" text=""/>
+        <Button text="inapoi" onAction="#goBackMenu"/>
+    </VBox>
+    <VBox fx:id="filtrare2" alignment="TOP_LEFT" spacing="10.0" visible="false">
+    <padding>
+        <Insets bottom="100.0" left="100.0" right="100.0" top="100.0"/>
+    </padding>
+        <Label text="Filtrare"/>
+        <TextField fx:id="cautaField" promptText="Cauta"/>
+        <Button text="Fitreaza" onAction="#handleFiltrare2"/>
+        <ListView fx:id="Filtrate2ListView"  prefHeight="400.0" prefWidth="300.0"/>
+        <Button text="inapoi" onAction="#goBackMenu"/>
+    </VBox>
+
+</StackPane>
